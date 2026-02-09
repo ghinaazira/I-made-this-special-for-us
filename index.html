@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Fun Day 🤎</title>
+
+<!-- Google Font Aesthetic -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background: linear-gradient(120deg,#2b2118,#5a4633,#f5f1eb);
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.card {
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+h2,h3{
+font-family:'Playfair Display', serif;
+}
+  
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.choice{
+display:block;
+width:100%;
+margin:10px auto;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#d6c2a8;
+color:#2b2118;
+cursor:pointer;
+transition:0.3s;
+font-size:0.95rem;
+}
+
+.choice:hover{
+background:white;
+}
+
+.no{
+background:#aaa;
+position:relative;
+}
+
+.paper{
+background:#f5f1eb;
+color:#2b2118;
+padding:25px;
+border-radius:12px;
+}
+
+/* gif */
+.gif{
+width:150px;
+border-radius:12px;
+margin:10px;
+}
+
+/* heart animation */
+.heart{
+    position:fixed;
+    font-size:16px;
+    color:#fff;
+    animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-10vh);}
+    100%{transform:translateY(100vh);}
+}
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="card page" id="page1">
+
+<img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+<h2>Are you willing to let me steal one full day of your time… just for me?😗</h2>
+<button class="next" onclick="showPage(2)">Yes</button>
+<button class="No" id="noBtn">No</button>
+</div>
+
+
+<!-- PAGE 2 -->
+<div class="card page" id="page2" style="display:none;">
+
+<img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW1pOHRsdm0wNmU1NnFjd2tsbnpjZDhnYjVmMm94a3cya25mM203bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G6TgcESZt8FFk8XV7K/giphy.gif">
+
+<h3>Pilih tempat makan kita!!!</h3>
+
+<button class="choice" onclick="setFood('Udon')">Udon (Rekomendasiku ini sii hehe dan kita belum pernah nyoba juga)</button>
+<button class="choice" onclick="setFood('Ramen')">Ramen Kenzhan (Yg tempatnya dideretan ULM)</button>
+<button class="choice" onclick="setFood('Ayam Gepuk')">Ayam Gepuk Pak Gembus (Ini karena kita belum pernah nyoba)</button>
+
+<button class="choice" onclick="showPage(3)">Next ➝</button>
+
+</div>
+
+
+<!-- PAGE 3 -->
+<div class="card page" id="page3" style="display:none;">
+
+<img class="gif" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmNidDFpbTRndTc3aDh2c2kxNDQ0eTVrMjhjeThjZDB3azVwYTZobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YLPOIP1jPu1N87yemm/giphy.gif">
+
+<h3>Pilih aktivitas date😏</h3>
+
+<button class="choice" onclick="setActivity('Photobox + Pijat + Chikuro')">Photobox + Pijat dikursi pijat + makan Chikuro (Ayam isi saus di qmall yg sering aku ceritain!)</button>
+<button class="choice" onclick="setActivity('Photobox + Nonton + Dunkin')">Photobox + Nonton + Beli Donat Dunkin greentea (Yg sering aku ceritain jugaaa)</button>
+<button class="choice" onclick="setActivity('Photobox + Pijat + Baking')">Photobox + Pijat dikursi pijat + Baking cookie cake bareng dikost!</button>
+
+<button class="choice" onclick="showPage(4)">Next ➝</button>
+
+</div>
+
+
+<!-- PAGE 4 -->
+<div class="card page" id="page4" style="display:none;">
+
+<img class="gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzRyaTgwdmRqYXV6eXNsZTlnd3kxNjFjZmVtb2ExdHZjbGticW1taCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/In0Lpu4FVivjISX9HT/giphy.gif">
+
+<h3>Pilih hari & jam 📅</h3>
+
+<button class="choice" onclick="setTime('Selasa, 17 Februari - 16.00')">
+Selasa, 17 Februari jam 16.00
+</button>
+
+<button class="choice" onclick="setTime('Rabu, 18 Februari - 15.00')">
+Rabu, 18 Februari jam 15.00
+</button>
+
+<button class="choice" onclick="showSummary()">Finish ➝</button>
+
+</div>
+
+
+<!-- SUMMARY -->
+<div class="card page" id="page5" style="display:none;">
+
+<img class="gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJvMG50dDY1dDYybzRzMXVjenBxbzhwdTBoeXhmenhuMnd2NnRoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/naAaDvbAoOYdW/giphy.gif">
+
+<div class="paper">
+
+<h2>Our Date Plan 🤎</h2>
+
+<p id="summaryText"></p>
+
+<p>
+Makasih ya Cil udah mau spend waktu spesial ini sama aku hehe😙🖤
+Aku beneran excited bgttt buat hari itu dan I can't wait to make sweet memories with you!😼
+</p>
+
+</div>
+</div>
+
+
+<script>
+
+let food="", activity="", time="";
+
+function showPage(num){
+document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+document.getElementById("page"+num).style.display="block";
+}
+
+function setFood(choice){food=choice;}
+function setActivity(choice){activity=choice;}
+function setTime(choice){time=choice;}
+
+function showSummary(){
+showPage(5);
+
+document.getElementById("summaryText").innerHTML=`
+🤤 Makan: ${food}<br><br>
+😸 Aktivitas: ${activity}<br><br>
+📅 Jadwal: ${time}
+`;
+}
+
+/* tombol No kabur */
+let noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.position="absolute";
+noBtn.style.left=Math.random()*300+"px";
+noBtn.style.top=Math.random()*300+"px";
+});
+  
+/* falling hearts */
+function heart(){
+let h=document.createElement("div");
+h.classList.add("heart");
+h.innerHTML="🤍";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,700);
+
+</script>
+
+</body>
+</html>
